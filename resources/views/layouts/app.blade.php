@@ -1,33 +1,171 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<!-- Mirrored from pixelwibes.com/template/ebazar/html/dist/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Nov 2021 20:10:21 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>::eBazar::  Dashboard </title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <!-- plugin css file  -->
+    <link rel="stylesheet" href="/deco_assets/plugin/datatables/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="/deco_assets/plugin/datatables/dataTables.bootstrap5.min.css">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <!-- project css file  -->
+    <link rel="stylesheet" href="/deco_assets/css/ebazar.style.min.css">
+</head>
+<body>
+    <div id="ebazar-layout" class="theme-blue">
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+        <!-- sidebar -->
+        <div class="sidebar px-4 py-4 py-md-4 me-0">
+            <div class="d-flex flex-column h-100">
+                <a href="index.html" class="mb-0 brand-icon">
+                    <span class="logo-icon">
+                        <i class="bi bi-bag-check-fill fs-4"></i>
+                    </span>
+                    <span class="logo-text">eBazar</span>
+                </a>
+                <!-- Menu: main ul -->
+                <ul class="menu-list flex-grow-1 mt-3">
+                    <li><a class="m-link active" href="index.html"><i class="icofont-home fs-5"></i> <span>Dashboard</span></a></li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-product" href="#">
+                            <i class="icofont-truck-loaded fs-5"></i> <span>Products</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                            <!-- Menu: Sub menu ul -->
+                            <ul class="sub-menu collapse" id="menu-product">
+                                <li><a class="ms-link" href="product-grid.html">Product Grid</a></li>
+                                <li><a class="ms-link" href="product-list.html">Product List</a></li>
+                                <li><a class="ms-link" href="product-edit.html">Product Edit</a></li>
+                                <li><a class="ms-link" href="product-detail.html">Product Details</a></li>
+                                <li><a class="ms-link" href="product-add.html">Product Add</a></li>
+                                <li><a class="ms-link" href="product-cart.html">Shopping Cart</a></li>
+                                <li><a class="ms-link" href="checkout.html">Checkout</a></li>
+                            </ul>
+                    </li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#categories" href="#">
+                            <i class="icofont-chart-flow fs-5"></i> <span>Categories</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                            <!-- Menu: Sub menu ul -->
+                            <ul class="sub-menu collapse" id="categories">
+                                <li><a class="ms-link" href="categorie-list.html">Categories List</a></li>
+                                <li><a class="ms-link" href="categories-edit.html">Categories Edit</a></li>
+                                <li><a class="ms-link" href="categories-add.html">Categories Add</a></li>
+                            </ul>
+                    </li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-order" href="#">
+                        <i class="icofont-notepad fs-5"></i> <span>Orders</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                        <!-- Menu: Sub menu ul -->
+                        <ul class="sub-menu collapse" id="menu-order">
+                            <li><a class="ms-link" href="order-list.html">Orders List</a></li>
+                            <li><a class="ms-link" href="order-details.html">Order Details</a></li>
+                            <li><a class="ms-link" href="order-invoices.html">Order Invoices</a></li>
+                        </ul>
+                    </li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#customers-info" href="#">
+                        <i class="icofont-funky-man fs-5"></i> <span>Customers</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                        <!-- Menu: Sub menu ul -->
+                        <ul class="sub-menu collapse" id="customers-info">
+                            <li><a class="ms-link" href="customers.html">Customers List</a></li>
+                            <li><a class="ms-link" href="customer-detail.html">Customers Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-sale" href="#">
+                        <i class="icofont-sale-discount fs-5"></i> <span>Sales Promotion</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                        <!-- Menu: Sub menu ul -->
+                        <ul class="sub-menu collapse" id="menu-sale">
+                            <li><a class="ms-link" href="coupons-list.html">Coupons List</a></li>
+                            <li><a class="ms-link" href="coupon-add.html">Coupons Add</a></li>
+                            <li><a class="ms-link" href="coupon-edit.html">Coupons Edit</a></li>
+                        </ul>
+                    </li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-inventory" href="#">
+                        <i class="icofont-chart-histogram fs-5"></i> <span>Inventory</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                        <!-- Menu: Sub menu ul -->
+                        <ul class="sub-menu collapse" id="menu-inventory">
+                            <li><a class="ms-link" href="inventory-info.html">Stock List</a></li>
+                            <li><a class="ms-link" href="purchase.html">Purchase</a></li>
+                            <li><a class="ms-link" href="supplier.html">Supplier</a></li>
+                            <li><a class="ms-link" href="returns.html">Returns</a></li>
+                            <li><a class="ms-link" href="department.html">Department</a></li>
+                        </ul>
+                    </li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-Componentsone" href="#"><i
+                                class="icofont-ui-calculator"></i> <span>Accounts</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                        <!-- Menu: Sub menu ul -->
+                        <ul class="sub-menu collapse" id="menu-Componentsone">
+                            <li><a class="ms-link" href="invoices.html">Invoices </a></li>
+                            <li><a class="ms-link" href="expenses.html">Expenses </a></li>
+                            <li><a class="ms-link" href="salaryslip.html">Salary Slip </a></li>
+                        </ul>
+                    </li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#app" href="#">
+                        <i class="icofont-code-alt fs-5"></i> <span>App</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                        <!-- Menu: Sub menu ul -->
+                        <ul class="sub-menu collapse" id="app">
+                            <li><a class="ms-link" href="calendar.html">Calandar</a></li>
+                            <li><a class="ms-link" href="chat.html"> Chat App</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="m-link" href="store-locator.html"><i class="icofont-focus fs-5"></i> <span>Store Locator</span></a></li>
+                    <li><a class="m-link" href="ui-elements/ui-alerts.html"><i class="icofont-paint fs-5"></i> <span>UI Components</span></a></li>
+                    <li class="collapsed">
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#page" href="#">
+                        <i class="icofont-page fs-5"></i> <span>Other Pages</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                        <!-- Menu: Sub menu ul -->
+                        <ul class="sub-menu collapse" id="page">
+                            <li><a class="ms-link" href="admin-profile.html">Profile Page</a></li>
+                            <li><a class="ms-link" href="purchase-plan.html">Price Plan Example</a></li>
+                            <li><a class="ms-link" href="charts.html">Charts Example</a></li>
+                            <li><a class="ms-link" href="table.html">Table Example</a></li>
+                            <li><a class="ms-link" href="forms.html">Forms Example</a></li>
+                            <li><a class="ms-link" href="icon.html">Icons</a></li>
+                            <li><a class="ms-link" href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Menu: menu collepce btn -->
+                <button type="button" class="btn btn-link sidebar-mini-btn text-light">
+                    <span class="ms-2"><i class="icofont-bubble-right"></i></span>
+                </button>
+            </div>
         </div>
-    </body>
+
+        <!-- main body area -->
+        {{ $slot }}
+
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script src="/deco_assets/bundles/libscripts.bundle.js"></script>
+
+    <!-- Plugin Js -->
+    <script src="/deco_assets/bundles/apexcharts.bundle.js"></script>
+    <script src="/deco_assets/bundles/dataTables.bundle.js"></script>
+
+    <!-- Jquery Page Js -->
+    <script src="http://pixelwibes.com/template/ebazar/html/js/template.js"></script>
+    <script src="http://pixelwibes.com/template/ebazar/html/js/page/index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Jr7axGGkwvHRnNfoOzoVRFV3yOPHJEU&amp;callback=myMap"></script>
+    <script>
+        $('#myDataTable')
+        .addClass( 'nowrap')
+        .dataTable( {
+            responsive: true,
+            columnDefs: [
+                { targets: [-1, -3], className: 'dt-body-right' }
+            ]
+        });
+    </script>
+</body>
+
+<!-- Mirrored from pixelwibes.com/template/ebazar/html/dist/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Nov 2021 20:11:24 GMT -->
 </html>
