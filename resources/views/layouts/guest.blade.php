@@ -106,8 +106,8 @@
                         <div class="col-md-5">
                             <div class="header-top-right">
                                 <ul>
-                                    <li><a href="contact.html">My Account</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                                    <li><a href="{{ route('login') }}">Login</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="contact.html">FAQ</a></li>
                                 </ul>
