@@ -16,7 +16,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <button type="button" class="btn btn-primary text-uppercase px-4">ADD CATEGORY</button>
+                                    <button class="btn btn-primary text-uppercase px-4">ADD CATEGORY</button>
                                 </div>
                             </form>
 
