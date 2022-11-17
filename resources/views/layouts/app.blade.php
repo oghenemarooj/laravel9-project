@@ -31,7 +31,7 @@
                 <!-- Menu: main ul -->
                 <ul class="menu-list flex-grow-1 mt-3">
                     <li><a class="m-link active" href="{{ route('dashboard') }}"><i class="icofont-home fs-5"></i> <span>Dashboard</span></a></li>
-                    <li><a class="m-link active" href="{{ route('add-category') }}"><i class="icofont-chart-flow fs-5"></i> <span> Add Category</span></a></li>
+                    <li><a class="m-link active" href="{{ route('category.create') }}"><i class="icofont-chart-flow fs-5"></i> <span> Add Category</span></a></li>
 
                 </ul>
 

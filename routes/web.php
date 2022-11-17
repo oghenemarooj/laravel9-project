@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +23,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/add-category', function () {
-    return view('add_category');
-})->middleware(['auth'])->name('add-category');
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/add-category', [CategoryController::class, 'create'] )->name('category.create');
+    Route::post('/store-category', [CategoryController::class, 'store'] )->name('category.store');
+});
 
 require __DIR__.'/auth.php';
