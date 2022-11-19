@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,8 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/add-category', [CategoryController::class, 'create'] )->name('category.create');
     Route::post('/store-category', [CategoryController::class, 'store'] )->name('category.store');
+    Route::get('/add-product', [ProductController::class, 'create'] )->name('product.create');
+    Route::post('/store-product', [ProductController::class, 'store'] )->name('product.store');
 });
 
 require __DIR__.'/auth.php';
