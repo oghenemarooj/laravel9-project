@@ -17,13 +17,16 @@ class ProductController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'price' => 'required',
+            'price' => 'integer|required',
+            'category_id' => 'required',
             'description' => 'required',
             'quantity' => 'required',
         ]);
+        //Product:::create($data);
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
+            'category_id' => $request->category_id,
             'description' => $request->description,
             'quantity' => $request->quantity,
         ]);
