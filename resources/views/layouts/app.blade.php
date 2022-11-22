@@ -33,6 +33,7 @@
                     <li><a class="m-link active" href="{{ route('dashboard') }}"><i class="icofont-home fs-5"></i> <span>Dashboard</span></a></li>
                     <li><a class="m-link active" href="{{ route('category.create') }}"><i class="icofont-chart-flow fs-5"></i> <span> Add Category</span></a></li>
                     <li><a class="m-link active" href="{{ route('product.create') }}"><i class="icofont-chart-flow fs-5"></i> <span> Add Product</span></a></li>
+                    <li><a class="m-link active" href="{{ route('product.view') }}"><i class="icofont-chart-flow fs-5"></i> <span>All Product</span></a></li>
                 </ul>
 
                 <!-- Menu: menu collepce btn -->

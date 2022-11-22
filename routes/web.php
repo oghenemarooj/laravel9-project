@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/store-category', [CategoryController::class, 'store'] )->name('category.store');
     Route::get('/add-product', [ProductController::class, 'create'] )->name('product.create');
     Route::post('/store-product', [ProductController::class, 'store'] )->name('product.store');
+    Route::get('/product', [ProductController::class, 'view'] )->name('product.view');
 });
 
 require __DIR__.'/auth.php';

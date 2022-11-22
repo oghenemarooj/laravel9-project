@@ -9,6 +9,8 @@ class CategoryController extends Controller
 {
     public function create()
     {
+
+
         return view('user.add_category');
     }
     public function store(Request $request)

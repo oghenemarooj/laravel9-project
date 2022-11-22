@@ -28,6 +28,17 @@
                                     <label  class="form-label">Description</label>
                                     <input name="description" type ="text" class="form-control">
                                 </div>
+                            
+                                <div class="form-group mb-3">
+                                    <label for="" >Category</label>
+                                    <select name="category_id"  class="form-control">
+                                        <option>Select Category</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
 
                                 <div class="mb-3">
                                     <button class="btn btn-primary text-uppercase px-4">ADD CATEGORY</button>

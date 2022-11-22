@@ -9,15 +9,19 @@
                             <h6 class="m-0 fw-bold">ADD CATEGORY</h6>
                         </div>
                         <div class="card-body">
+                            <x-auth-session-status class="mb-4" :status="session('status')" />
+
+                            <x-auth-validation-errors class="mb-4" :errors="$errors" />
                             <form action="{{ route('category.store') }}" method="post">@csrf
                                 <div class="mb-3">
                                     <label  class="form-label">Name</label>
                                     <input name="name" type ="text" class="form-control">
                                 </div>
+                                
 
-                                <div class="mb-3">
+
                                     <button class="btn btn-primary text-uppercase px-4">ADD CATEGORY</button>
-                                </div>
+
                             </form>
 
                         </div>
