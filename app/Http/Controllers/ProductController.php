@@ -23,9 +23,10 @@ class ProductController extends Controller
             'category_id' => 'required',
             'description' => 'required',
             'quantity' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg'
         ]);
         //Product:::create($data);
-        Product::create([
+       $product = Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'category_id' => $request->category_id,
@@ -33,11 +34,19 @@ class ProductController extends Controller
             'quantity' => $request->quantity,
         ]);
 
+        $file = $request->file('image');
+        $ext = $file->getClientOriginalExtension();
+        $filename = \Str::slug($request->name) . time() . '.' . $ext;
+        $file->storePubliclyAs('public/images', $filename);
+
+        $product->image = $filename;
+        $product->save();
+
         return back();
     }
     public function view()
     {
-        $products = Product::all(); //getting all from the database
+        $products = Product::latest()->get(); //getting all from the database
 
         return view('user.product', compact('products'));
     }

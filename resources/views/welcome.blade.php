@@ -7,165 +7,16 @@
                 <div class="row">
                     <div class="col-3 d-none d-lg-block">
                         <div class="header-category">
-                            <a href="#" class="cat-toggle"><i class="fas fa-bars"></i>ALL DEPARTMENT<i class="fas fa-angle-down"></i></a>
+                            <a href="#" class="cat-toggle"><i class="fas fa-bars"></i>ALL Categories<i class="fas fa-angle-down"></i></a>
+                            @foreach ($categories as $category)
                             <ul class="category-menu">
-                                <li class="menu-item-has-children"><a href="shop.html"><i class="flaticon-groceries"></i> Grocery & Frozen</a>
-                                    <ul class="megamenu">
-                                        <li class="sub-column-item"><a href="shop.html">Grocery & Frozen</a>
-                                            <ul>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                                <li><a href="shop.html">Walnuts Max</a></li>
-                                                <li><a href="shop.html">Mat Orange</a></li>
-                                                <li><a href="shop.html">France Potato</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Fresh Fruits</a>
-                                            <ul>
-                                                <li><a href="shop.html">Watermelon</a></li>
-                                                <li><a href="shop.html">Black Grapes</a></li>
-                                                <li><a href="shop.html">Grassland Dairy</a></li>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Fresh Bread & Bakery</a>
-                                            <ul>
-                                                <li><a href="shop.html">Grassland Dairy</a></li>
-                                                <li><a href="shop.html">Walnuts Max</a></li>
-                                                <li><a href="shop.html">Powders Dairy</a></li>
-                                                <li><a href="shop.html">Ice cream</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Fresh Meat</a>
-                                            <ul>
-                                                <li><a href="shop.html">Fresh Butter</a></li>
-                                                <li><a href="shop.html">Orange Sliced</a></li>
-                                                <li><a href="shop.html">Carrots Group</a></li>
-                                                <li><a href="shop.html">Poultry Farm</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Dried Fruit</a>
-                                            <ul>
-                                                <li><a href="shop.html">Fresh Nuts</a></li>
-                                                <li><a href="shop.html">France Potato</a></li>
-                                                <li><a href="shop.html">Green Chilies</a></li>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Other Foods</a>
-                                            <ul>
-                                                <li class="mega-menu-banner"><a href="shop.html"><img src="/eco_assets/img/images/megamenu_banner.jpg"
-                                                            alt=""></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="shop.html"><i class="flaticon-cherry"></i> Fresh Fruits</a></li>
-                                <li><a href="shop.html"><i class="flaticon-fish"></i> Fresh Fish</a></li>
-                                <li class="menu-item-has-children"><a href="shop.html"><i class="flaticon-hazelnut"></i> Fresh Nuts</a>
-                                    <ul class="megamenu">
-                                        <li class="sub-column-item"><a href="shop.html">Grocery & Frozen</a>
-                                            <ul>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                                <li><a href="shop.html">Walnuts Max</a></li>
-                                                <li><a href="shop.html">Mat Orange</a></li>
-                                                <li><a href="shop.html">France Potato</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Fresh Fruits</a>
-                                            <ul>
-                                                <li><a href="shop.html">Watermelon</a></li>
-                                                <li><a href="shop.html">Black Grapes</a></li>
-                                                <li><a href="shop.html">Grassland Dairy</a></li>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Fresh Bread & Bakery</a>
-                                            <ul>
-                                                <li><a href="shop.html">Grassland Dairy</a></li>
-                                                <li><a href="shop.html">Walnuts Max</a></li>
-                                                <li><a href="shop.html">Powders Dairy</a></li>
-                                                <li><a href="shop.html">Ice cream</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Fresh Meat</a>
-                                            <ul>
-                                                <li><a href="shop.html">Fresh Butter</a></li>
-                                                <li><a href="shop.html">Orange Sliced</a></li>
-                                                <li><a href="shop.html">Carrots Group</a></li>
-                                                <li><a href="shop.html">Poultry Farm</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Dried Fruit</a>
-                                            <ul>
-                                                <li><a href="shop.html">Fresh Nuts</a></li>
-                                                <li><a href="shop.html">France Potato</a></li>
-                                                <li><a href="shop.html">Green Chilies</a></li>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Other Foods</a>
-                                            <ul>
-                                                <li class="mega-menu-banner"><a href="shop.html"><img src="/eco_assets/img/images/megamenu_banner02.jpg"
-                                                            alt=""></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="shop.html"><i class="flaticon-meat"></i> Fresh Meat</a></li>
-                                <li class="menu-item-has-children"><a href="shop.html"><i class="flaticon-cupcake"></i> Bread & Bakery</a>
-                                    <ul class="megamenu">
-                                        <li class="sub-column-item"><a href="shop.html">Grocery & Frozen</a>
-                                            <ul>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                                <li><a href="shop.html">Walnuts Max</a></li>
-                                                <li><a href="shop.html">Mat Orange</a></li>
-                                                <li><a href="shop.html">France Potato</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Fresh Fruits</a>
-                                            <ul>
-                                                <li><a href="shop.html">Watermelon</a></li>
-                                                <li><a href="shop.html">Black Grapes</a></li>
-                                                <li><a href="shop.html">Grassland Dairy</a></li>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Fresh Bread & Bakery</a>
-                                            <ul>
-                                                <li><a href="shop.html">Grassland Dairy</a></li>
-                                                <li><a href="shop.html">Walnuts Max</a></li>
-                                                <li><a href="shop.html">Powders Dairy</a></li>
-                                                <li><a href="shop.html">Ice cream</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Fresh Meat</a>
-                                            <ul>
-                                                <li><a href="shop.html">Fresh Butter</a></li>
-                                                <li><a href="shop.html">Orange Sliced</a></li>
-                                                <li><a href="shop.html">Carrots Group</a></li>
-                                                <li><a href="shop.html">Poultry Farm</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Dried Fruit</a>
-                                            <ul>
-                                                <li><a href="shop.html">Fresh Nuts</a></li>
-                                                <li><a href="shop.html">France Potato</a></li>
-                                                <li><a href="shop.html">Green Chilies</a></li>
-                                                <li><a href="shop.html">Organic Broccoli</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-column-item"><a href="shop.html">Organic Other Foods</a>
-                                            <ul>
-                                                <li class="mega-menu-banner"><a href="shop.html"><img src="/eco_assets/img/images/megamenu_banner.jpg"
-                                                            alt=""></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="shop.html"><i class="flaticon-broccoli"></i> Vegetable</a></li>
-                                <li><a href="shop.html"><i class="flaticon-pop-corn-1"></i> Popcorn</a></li>
-                                <li><a href="shop.html"><i class="flaticon-nut"></i> Dried Fruit</a></li>
+
+
+                                <li><a href="shop.html"><i class="flaticon-cherry"></i> {{ $category->name }}</a></li>
+
                             </ul>
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="col-7">
@@ -302,15 +153,16 @@
                     </div>
                 </div>
                 <div class="row special--product-active">
+                    @foreach ($products as $product)
                     <div class="col-xl-3 col-md-4 col-sm-6 grid-item grid-sizer cat-two">
                         <div class="sp--product--item mb-50">
                             <div class="sp--product--thumb">
                                 <span class="batch">-20 %</span>
                                 <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/sp__products01.png" alt=""></a>
+                                <a href="shop-details.html"><img src="/storage/images/{{ $product->image }}" alt=""></a>
                             </div>
                             <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Watermelon</a></h6>
+                                <h6 class="title"><a href="shop-details.html">{{ $product->name }}</a></h6>
                                 <div class="rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -318,145 +170,14 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <div class="price">$12.00/kg</div>
+
+                                <div class="price">{{ $product->price }}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 grid-item grid-sizer cat-one">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/sp__products02.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Walnuts Max</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$09.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 grid-item grid-sizer cat-two">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/sp__products03.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Black Grapes</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$05.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 grid-item grid-sizer cat-one">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <span class="batch new">New</span>
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/sp__products04.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Grassland Dairy</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$1.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 grid-item grid-sizer cat-one cat-two">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/sp__products05.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Organic Broccoli</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$7.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 grid-item grid-sizer cat-one">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/sp__products06.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Organic Butter</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$3.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 grid-item grid-sizer cat-one cat-two">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <span class="batch new">New</span>
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/sp__products07.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Mat Orange</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$13.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 grid-item grid-sizer cat-one cat-two">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/sp__products08.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">France Potato</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$02.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
+
                 </div>
             </div>
         </section>
@@ -521,64 +242,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/bdw_products02.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Organic Butter</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$9.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <span class="batch new">New</span>
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/bdw_products03.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">Mat Orange</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$9.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6">
-                        <div class="sp--product--item mb-50">
-                            <div class="sp--product--thumb">
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/eco_assets/img/product/bdw_products04.png" alt=""></a>
-                            </div>
-                            <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">France Potato</a></h6>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">$9.99/kg</div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>

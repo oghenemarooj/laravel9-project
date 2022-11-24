@@ -12,7 +12,7 @@
                         </div>
                         <div class="card-body">
                             <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                            <form action="{{ route('product.store') }}" method="post">@csrf
+                            <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">@csrf
                                 <div class="mb-3">
                                     <label  class="form-label">Name</label>
                                     <input name="name" type ="text" class="form-control">
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Image</label>
-                                    <input type="file" class="form-control">
+                                    <input type="file" name="image" class="form-control">
                                 </div>
 
                                 <div class="mb-3">

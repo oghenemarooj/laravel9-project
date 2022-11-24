@@ -22,7 +22,7 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="product-item active">
-                                            <img src="deco_assets/images/product/product-1.jpg" alt="product" class="img-fluid w-100">
+                                            <img src="/storage/images/{{ $product->image }}" alt="product" class="img-fluid w-100">
                                         </div>
                                         <a class="add-wishlist" href="#">
                                             <i class="bi bi-heart-fill text-danger"></i>
@@ -30,9 +30,9 @@
                                     </div>
                                     <div class="product-content p-3">
                                         <span class="rating mb-2 d-block"><i class="icofont-star text-warning"></i> 4.5 (145)</span>
-                                        <a value="{{ $product->id }}" class="fw-bold">{{ $product->name }} </a>
-                                        <p value="{{ $product->id }}" class="text-muted">{{ $product->description }}</p>
-                                        <span value="{{ $product->id }}" class="d-block fw-bold fs-5 text-secondary">{{ $product->price }}</span>
+                                        <a  class="fw-bold">{{ $product->name }} </a>
+                                        <p  class="text-muted">{{ $product->description }}</p>
+                                        <span  class="d-block fw-bold fs-5 text-secondary">{{ $product->price }}</span>
                                         <a href="product-cart.html" class="btn btn-primary mt-3">Add to Cart</a>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
 
 
                     </div>
-                   
+
                 </div>
             </div> <!-- Row end  -->
         </div>
