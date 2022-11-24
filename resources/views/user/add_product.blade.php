@@ -11,6 +11,7 @@
                             <h6 class="m-0 fw-bold">ADD PRODUCT</h6>
                         </div>
                         <div class="card-body">
+                            <x-auth-validation-errors class="mb-4" :errors="$errors" />
                             <form action="{{ route('product.store') }}" method="post">@csrf
                                 <div class="mb-3">
                                     <label  class="form-label">Name</label>
@@ -28,7 +29,7 @@
                                     <label  class="form-label">Description</label>
                                     <input name="description" type ="text" class="form-control">
                                 </div>
-                            
+
                                 <div class="form-group mb-3">
                                     <label for="" >Category</label>
                                     <select name="category_id"  class="form-control">
@@ -39,9 +40,13 @@
 
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Image</label>
+                                    <input type="file" class="form-control">
+                                </div>
 
                                 <div class="mb-3">
-                                    <button class="btn btn-primary text-uppercase px-4">ADD CATEGORY</button>
+                                    <button class="btn btn-primary text-uppercase px-4">ADD PRODUCT</button>
                                 </div>
                             </form>
 

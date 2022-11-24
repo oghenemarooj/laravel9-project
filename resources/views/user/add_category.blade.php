@@ -17,7 +17,7 @@
                                     <label  class="form-label">Name</label>
                                     <input name="name" type ="text" class="form-control">
                                 </div>
-                                
+
 
 
                                     <button class="btn btn-primary text-uppercase px-4">ADD CATEGORY</button>
