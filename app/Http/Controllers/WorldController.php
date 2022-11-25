@@ -11,7 +11,7 @@ class WorldController extends Controller
     public function index()
    {
        $products = Product::latest()->get();
-       $categories = Category::latest()->get();
+       $categories = Category::orderBy('name', 'asc')->get();
        return view('welcome', compact('products', 'categories'));
    }
 }
