@@ -34,6 +34,7 @@
                     <li><a class="m-link active" href="{{ route('category.create') }}"><i class="icofont-chart-flow fs-5"></i> <span> Add Category</span></a></li>
                     <li><a class="m-link active" href="{{ route('product.create') }}"><i class="icofont-ui-calculator"></i> <span> Add Product</span></a></li>
                     <li><a class="m-link active" href="{{ route('product.view') }}"><i class="icofont-notepad fs-5"></i> <span>All Product</span></a></li>
+                    <li><a class="m-link active" href="{{ route('category.check') }}"><i class="icofont-notepad fs-5"></i> <span>All category</span></a></li>
                 </ul>
 
                 <!-- Menu: menu collepce btn -->

@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WorldController::class, 'index'])->name('welcome');
+Route::get('/products/{category_id}', [WorldController::class, 'products'])->name('shop');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,6 +33,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/add-product', [ProductController::class, 'create'] )->name('product.create');
     Route::post('/store-product', [ProductController::class, 'store'] )->name('product.store');
     Route::get('/product', [ProductController::class, 'view'] )->name('product.view');
+    Route::get('/all-category', [CategoryController::class, 'check'] )->name('category.check');
+    Route::get('/product-category/{category_id}', [CategoryController::class, 'pro_check'] )->name('pro.category');
 });
 
 require __DIR__.'/auth.php';

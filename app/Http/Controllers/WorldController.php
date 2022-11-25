@@ -14,4 +14,12 @@ class WorldController extends Controller
        $categories = Category::orderBy('name', 'asc')->get();
        return view('welcome', compact('products', 'categories'));
    }
+   public function products($category_id)
+   {
+       $category = Category::where('id', '=', $category_id)->first();
+
+    //    $category = Category::find($category_id);
+    //    dd($category_id);
+       return view('products');
+   }
 }

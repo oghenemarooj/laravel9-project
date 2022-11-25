@@ -12,7 +12,7 @@
                             <ul class="category-menu">
 
 
-                                <li><a href="shop.html"><i class="flaticon-cherry"></i> {{ $category->name }}</a></li>
+                                <li><a href="{{ route('shop', $category->id) }}"><i class="flaticon-cherry"></i> {{ $category->name  }} </a></li>
 
                             </ul>
                             @endforeach
@@ -242,7 +242,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
