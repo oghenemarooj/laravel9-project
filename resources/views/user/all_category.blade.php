@@ -33,7 +33,7 @@
                                         <a  class="fw-bold">{{ $category->name }} </a>
                                         <p  class="text-muted">{{ $category->description }}</p>
                                         <span  class="d-block fw-bold fs-5 text-secondary">{{ $category->price }}</span>
-                                        <a href="{{ route ('pro.category', $category->id)}}" class="btn btn-primary mt-3">View Products</a>
+                                        <a href="{{ route ('category.products', $category->id)}}" class="btn btn-primary mt-3">View Products</a>
                                     </div>
                                 </div>
                             </div>

@@ -159,7 +159,7 @@
                             <div class="sp--product--thumb">
                                 <span class="batch">-20 %</span>
                                 <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="shop-details.html"><img src="/storage/images/{{ $product->image }}" alt=""></a>
+                                <a href="{{ route ('product.details', $product->id) }}"><img src="/storage/images/{{ $product->image }}" alt=""></a>
                             </div>
                             <div class="sp--product--content">
                                 <h6 class="title"><a href="shop-details.html">{{ $product->name }}</a></h6>

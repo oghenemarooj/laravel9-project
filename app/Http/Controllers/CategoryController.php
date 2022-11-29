@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         return back();
     }
-    public function check()
+    public function all()
     {
 
         $categories = Category::all();
@@ -36,9 +36,9 @@ class CategoryController extends Controller
 
         return view('user.all_category', compact('categories',));
     }
-    public function pro_check($category_id)
+    public function products($category_id)
     {
-        $products = Product::where('id', $category_id)->get();
+        $products = Product::where('category_id', $category_id)->get();
 
         return view('user.product_category', compact('products'));
     }

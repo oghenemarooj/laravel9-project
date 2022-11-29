@@ -22,4 +22,9 @@ class WorldController extends Controller
     //    dd($category_id);
        return view('products');
    }
+   public function details($product_id)
+   {
+    $products = Product::where('id', $product_id)->get();
+       return view('details', compact('products'));
+   }
 }
