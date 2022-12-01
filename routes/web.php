@@ -34,11 +34,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/add-category', [CategoryController::class, 'create'] )->name('category.create');
     Route::post('/store-category', [CategoryController::class, 'store'] )->name('category.store');
     Route::get('/add-product', [ProductController::class, 'create'] )->name('product.create');
-    Route::get('/edit-product/{product}', [ProductController::class, 'edit'] )->name('product.edit');
     Route::post('/store-product', [ProductController::class, 'store'] )->name('product.store');
     Route::get('/product', [ProductController::class, 'view'] )->name('product.view');
     Route::get('/all-category', [CategoryController::class, 'all'] )->name('category.all');
     Route::get('/product-category/{category_id}', [CategoryController::class, 'products'] )->name('category.products');
+
+
+    Route::get('/edit-product/{product}', [ProductController::class, 'edit'] )->name('product.edit');
+    Route::post('/update-product/{product}', [ProductController::class, 'update'] )->name('product.update');
 });
 
 require __DIR__.'/auth.php';

@@ -10,9 +10,12 @@
                         <div class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
                             <h6 class="m-0 fw-bold">ADD PRODUCT</h6>
                         </div>
+                        @foreach ($errors as $error)
+                            
+                        @endforeach
                         <div class="card-body">
                             <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                            <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">@csrf
+                            <form action="{{ route('product.update', $product) }}" method="post" enctype="multipart/form-data">@csrf
                                 <div class="form-group">
                                     <label for="">Image</label>
                                     <img src="/storage/images/{{ $product->image }}" class="img-fluid" alt="">
@@ -38,7 +41,7 @@
                                 <div class="form-group mb-3">
                                     <label for="" >Category</label>
                                     <select name="category_id"  class="form-control">
-                                        <option>Select Category</option>
+                                        <option value="{{ $product->category_id }}">{{ $product->category->name }}</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach

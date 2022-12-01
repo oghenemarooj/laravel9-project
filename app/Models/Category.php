@@ -12,14 +12,6 @@ class Category extends Model
 
     protected $guarded = [];
 
-    /**
-     * Get the category that owns the Category
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'category_id', 'id');
-    }
     
+
 }

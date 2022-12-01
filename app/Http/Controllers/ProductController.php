@@ -13,11 +13,7 @@ class ProductController extends Controller
         $categories = Category::all(); //getting all from the database
         return view('user.add_product', compact('categories'));
     }
-    public function edit(Product $product)
-    {
-        $categories = Category::all();
-        return view('user.edit_product', compact('product', 'categories'));
-    }
+
     public function store(Request $request)
     {
         // dd($request->all());
@@ -54,5 +50,32 @@ class ProductController extends Controller
         $products = Product::latest()->get(); //getting all from the database
 
         return view('user.product', compact('products'));
+    }
+
+
+    public function edit(Product $product)
+    {
+        $categories = Category::all();
+        return view('user.edit_product', compact('product', 'categories'));
+    }
+    public function update(Request $request, Product $product)
+    {
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->quantity = $request->quantity;
+        $product->category_id = $request->category_id ;
+
+        if ($request->has('image')) {
+            $file = $request->file('image');
+            $ext = $file->getClientOriginalExtension();
+            $filename = \Str::slug($request->name) . time() . '.' . $ext;
+            $file->storePubliclyAs('public/images', $filename);
+
+            $product->image = $filename;
+        }
+
+        $product->save();
+        return back();
     }
 }
