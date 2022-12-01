@@ -108,7 +108,7 @@
                                 <ul>
                                     <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                                     <li><a href="{{ route('login') }}">Login</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact</a></li>
                                     <li><a href="contact.html">FAQ</a></li>
                                 </ul>
                             </div>
@@ -237,7 +237,7 @@
                                                     <li class="active"><a href="index-2.html">Home Page Two</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="about-us.html">About Us</a></li>
+                                            <li><a href="{{ route('about.us') }}">About Us</a></li>
                                             <li><a href="shop.html">Fruits & Vegetables</a></li>
                                             <li><a href="shop-right-sidebar.html">Grocery & Staples</a></li>
                                             <li class="menu-item-has-children"><a href="#">Pages</a>
@@ -251,7 +251,7 @@
                                                     <li><a href="terms-conditios.html">Terms Conditions</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">contacts</a></li>
+                                            <li><a href="{{ route('contact') }}">contacts</a></li>
                                         </ul>
                                     </div>
                                     <div class="header-delivery-message d-none d-md-block">

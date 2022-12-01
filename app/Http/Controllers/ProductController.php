@@ -13,6 +13,11 @@ class ProductController extends Controller
         $categories = Category::all(); //getting all from the database
         return view('user.add_product', compact('categories'));
     }
+    public function edit(Product $product)
+    {
+        $categories = Category::all();
+        return view('user.edit_product', compact('product', 'categories'));
+    }
     public function store(Request $request)
     {
         // dd($request->all());

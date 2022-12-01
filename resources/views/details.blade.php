@@ -25,6 +25,7 @@
         <!-- shop-details-area -->
         <section class="shop-details-area pt-90 pb-90">
             <div class="container">
+                @foreach ($products as $product)
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="shop-details-flex-wrap">
@@ -45,17 +46,17 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="item-one" role="tabpanel" aria-labelledby="item-one-tab">
                                         <div class="shop-details-img">
-                                            <img src="/eco_assets/img/product/shop_details_img01.jpg" alt="">
+                                            <img src="/storage/images/{{ $product->image }}" alt="">
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="item-two" role="tabpanel" aria-labelledby="item-two-tab">
                                         <div class="shop-details-img">
-                                            <img src="/eco_assets/img/product/shop_details_img02.jpg" alt="">
+                                            <img src="/storage/images/{{ $product->image }}" alt="">
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="item-three" role="tabpanel" aria-labelledby="item-three-tab">
                                         <div class="shop-details-img">
-                                            <img src="/eco_assets/img/product/shop_details_img03.jpg" alt="">
+                                            <img src="/storage/images/{{ $product->image }}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +65,7 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="shop-details-content">
-                            <h4 class="title">Dannon Max Natural Vitamin Ice Cream</h4>
+                            <h4 class="title">{{ $product->name }}</h4>
                             <div class="shop-details-meta">
                                 <ul>
                                     <li>Baands : <a href="shop.html">Ganic</a></li>
@@ -85,8 +86,7 @@
                                 <h2 class="price">$9.99</h2>
                                 <h5 class="stock-status">- IN Stock</h5>
                             </div>
-                            <p>Organic food is food produced by methods complying with the standards of Rrganic farming. Standards vary Lorem ipsum
-                            dolor sit amet, consectetur adipiscing worldwide, but organic farming.</p>
+                            <p>{{$product->description}}</p>
                             <div class="shop-details-list">
                                 <ul>
                                     <li>Type : <span>Ice Cream</span></li>
@@ -123,6 +123,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <div class="row">
                     <div class="col-12">
                         <div class="product-desc-wrap">
