@@ -173,6 +173,10 @@
 
                                 <div class="price">{{ $product->price }}</div>
                             </div>
+                            <div class="discount-time-content">
+
+                                <a href="shop.html" class="btn">Add to Cart</a>
+                            </div>
                         </div>
                     </div>
                     @endforeach
