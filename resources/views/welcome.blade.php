@@ -158,11 +158,13 @@
                         <div class="sp--product--item mb-50">
                             <div class="sp--product--thumb">
                                 <span class="batch">-20 %</span>
-                                <a href="cart.html" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
-                                <a href="{{ route ('product.details', $product->id) }}"><img src="/storage/images/{{ $product->image }}" alt=""></a>
+                                <a href="#" class="wishlist"><i class="flaticon-heart-shape-outline"></i></a>
+                                <a href="{{ route ('product.details', $product->id) }}"><img src="/storage/images/{{ $product->image }}" alt="product"  class="img-fluid w-100"></a>
+
+
                             </div>
                             <div class="sp--product--content">
-                                <h6 class="title"><a href="shop-details.html">{{ $product->name }}</a></h6>
+                                <h6 class="title"><a href="#">{{ $product->name }}</a></h6>
                                 <div class="rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -175,7 +177,7 @@
                             </div>
                             <div class="discount-time-content">
 
-                                <a href="shop.html" class="btn">Add to Cart</a>
+                                <a href="#" class="btn">Add to Cart</a>
                             </div>
                         </div>
                     </div>
