@@ -285,6 +285,16 @@
                     </div>
                 </div>
             </div>
+
+            @if (session()->has('message'))
+                            <div class="alert alert-success">
+
+                                <button type="button" class="close" data-dismiss="alert">X</button>
+
+                                {{session()->get('message')}}
+
+                            </div>
+                            @endif
         </header>
         <!-- header-area-end -->
 

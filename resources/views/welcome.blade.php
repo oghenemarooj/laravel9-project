@@ -175,10 +175,18 @@
 
                                 <div class="price">{{ $product->price }}</div>
                             </div>
-                            <div class="discount-time-content">
+
+                            <form action="{{url('addcart', $product->id)}}" method="POST">@csrf
+
+                                <input type="number" value="1" min="1" class="form-control" style="width: 100px" name="quantity">
+
+                                <br>
+                                <input class="btn btn-primary" type="submit" value="Add To Cart">
+                            </form>
+                            {{-- <div class="discount-time-content">
 
                                 <a href="#" class="btn">Add to Cart</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     @endforeach

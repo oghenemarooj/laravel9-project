@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\User;
+
+use App\Models\Cart;
 
 class WorldController extends Controller
 {
@@ -34,5 +39,33 @@ class WorldController extends Controller
    {
     $products = Product::where('id', $product_id)->get();
        return view('details', compact('products'));
+   }
+   public function addcart(Request $request, $id)
+   {
+    if(Auth::id())
+    {
+        $user = auth::user();
+
+        $product = product::find($id);
+
+        $cart = new cart;
+
+        $cart->name = $user->name;
+
+        // $cart->phone = $user->phone;
+        // $cart->addresss = $user->addresss;
+
+        $cart->product_title = $product->name;
+        $cart->price = $product->price;
+        $cart->quantity = $request->quantity;
+
+        $cart->save();
+
+        return redirect()->back()->with('message', 'Product Added successfully');
+    }
+    else
+    {
+        return redirect('login');
+    }
    }
 }

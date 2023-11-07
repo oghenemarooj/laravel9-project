@@ -23,6 +23,7 @@ Route::get('/about-us', [WorldController::class, 'about'])->name('about.us');
 Route::get('/contact-us', [WorldController::class, 'contact'])->name('contact');
 Route::get('/products/{category_id}', [WorldController::class, 'products'])->name('shop');
 Route::get('/products-details/{product_id}', [WorldController::class, 'details'])->name('product.details');
+Route::post('/addcart/{id}', [WorldController::class, 'addcart'] )->name('addcart.products');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,6 +39,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product', [ProductController::class, 'view'] )->name('product.view');
     Route::get('/all-category', [CategoryController::class, 'all'] )->name('category.all');
     Route::get('/product-category/{category_id}', [CategoryController::class, 'products'] )->name('category.products');
+
+
 
 
     Route::get('/edit-product/{product}', [ProductController::class, 'edit'] )->name('product.edit');

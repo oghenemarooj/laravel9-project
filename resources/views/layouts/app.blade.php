@@ -184,7 +184,14 @@
                                         <div class="list-group m-2 ">
                                             <a href="admin-profile.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-ui-user fs-5 me-3"></i>Profile Page</a>
                                             <a href="order-invoices.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-file-text fs-5 me-3"></i>Order Invoices</a>
-                                            <a href="ui-elements/auth-signin.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-5 me-3"></i>Signout</a>
+                                            {{-- <a href="ui-elements/auth-signin.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-5 me-3"></i>Signout</a> --}}
+                                            <a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                                                    class="fa fa-sign-out" style="font-size:30px;"></i><span>Sign
+                                                    out</span></a>
+                                            <form action="{{ route('logout') }} " id="logout-form" method="post">@csrf
+                                            </form>
+                                       
                                         </div>
                                     </div>
                                 </div>

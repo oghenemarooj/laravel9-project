@@ -43,6 +43,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            
                             <div class="widget shop-widget">
                                 <div class="shop-widget-title">
                                     <h6 class="title">Filter By Price</h6>
