@@ -1,4 +1,5 @@
 <x-guest-layout>
+    
     <main>
 
         <!-- slider-area -->

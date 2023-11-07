@@ -17,7 +17,9 @@ class WorldController extends Controller
    {
        $products = Product::latest()->get();
        $categories = Category::orderBy('name', 'asc')->get();
-       return view('welcome', compact('products', 'categories'));
+       $user = Auth::user();
+       $count = Cart::where('name', $user->name)->count();
+       return view('welcome', compact('products', 'categories', 'count'));
    }
    public function about()
    {
@@ -52,8 +54,8 @@ class WorldController extends Controller
 
         $cart->name = $user->name;
 
-        // $cart->phone = $user->phone;
-        // $cart->addresss = $user->addresss;
+        $cart->phone = $user->phone;
+        $cart->address = $user->address;
 
         $cart->product_title = $product->name;
         $cart->price = $product->price;
