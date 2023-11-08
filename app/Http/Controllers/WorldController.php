@@ -17,9 +17,9 @@ class WorldController extends Controller
    {
        $products = Product::latest()->get();
        $categories = Category::orderBy('name', 'asc')->get();
-       $user = Auth::user();
-       $count = Cart::where('name', $user->name)->count();
-       return view('welcome', compact('products', 'categories', 'count'));
+       $user = auth()->user();
+    //    $count = cart::where('phone', '=',  $user->phone)->count();
+       return view('welcome', compact('products', 'categories'));
    }
    public function about()
    {

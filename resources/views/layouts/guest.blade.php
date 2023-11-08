@@ -1,3 +1,13 @@
+@php
+    use App\Models\User;
+    use App\Models\Cart;
+
+
+
+    
+    $user = Auth::user();
+    $count = Cart::where('phone', $user->phone)->count();
+@endphp
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -156,35 +166,36 @@
                             <div class="header-action">
                                 <ul>
 
-                                    <li class="header-user"><a href="{{ route('dashboard') }}"><i class="flaticon-user"></i></a></li>
+                                    <li class="header-user"><a href="{{ route('dashboard') }}"><i
+                                                class="flaticon-user"></i></a></li>
                                     <li class="header-wishlist">
                                         <a href="#"><i class="flaticon-heart-shape-outline"></i></a>
-                                        {{-- <span class="item-count">{{$count}}</span> --}}
+                                        <span class="item-count">0</span>
                                     </li>
                                     <li class="header-wishlist">
                                         @if (Route::has('login'))
-                                        @auth
-                                        @else
-                                        <ul>
+                                            @auth
+                                            @else
+                                                <ul>
 
-                                            <li><a href="{{ route('login') }}">Login</a></li>
-                                            @if (Route::has('register'))
-                                            <li><a href="{{ route('register') }}">register</a></li>
-                                            @endif
-
-
-                                        </ul>
-
-                                        @endauth
+                                                    <li><a href="{{ route('login') }}">Login</a></li>
+                                                    @if (Route::has('register'))
+                                                        <li><a href="{{ route('register') }}">register</a></li>
+                                                    @endif
 
 
-                                    @endif
+                                                </ul>
+
+                                            @endauth
+
+
+                                        @endif
                                     </li>
 
                                     <li class="header-cart-action">
                                         <div class="header-cart-wrap">
-                                            <a href="cart.html"><i class="flaticon-shopping-basket"></i></a>
-                                            <span class="item-count">2</span>
+                                            <a href="{{url('showcart')}}"><i class="flaticon-shopping-basket"></i></a>
+                                            <span class="item-count">{{$count}}</span>
                                             <ul class="minicart">
                                                 <li class="d-flex align-items-start">
                                                     <div class="cart-img">
