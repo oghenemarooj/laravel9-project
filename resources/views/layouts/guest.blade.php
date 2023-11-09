@@ -1,10 +1,6 @@
 @php
     use App\Models\User;
     use App\Models\Cart;
-
-
-
-    
     $user = Auth::user();
     $count = Cart::where('phone', $user->phone)->count();
 @endphp
@@ -196,6 +192,7 @@
                                         <div class="header-cart-wrap">
                                             <a href="{{url('showcart')}}"><i class="flaticon-shopping-basket"></i></a>
                                             <span class="item-count">{{$count}}</span>
+                                            {{-- <span class="item-count">0</span> --}}
                                             <ul class="minicart">
                                                 <li class="d-flex align-items-start">
                                                     <div class="cart-img">

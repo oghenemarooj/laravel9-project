@@ -24,6 +24,8 @@ Route::get('/contact-us', [WorldController::class, 'contact'])->name('contact');
 Route::get('/products/{category_id}', [WorldController::class, 'products'])->name('shop');
 Route::get('/products-details/{product_id}', [WorldController::class, 'details'])->name('product.details');
 Route::post('/addcart/{id}', [WorldController::class, 'addcart'] )->name('addcart.products');
+Route::get('/showcart', [WorldController::class, 'showcart'] )->name('showcart.products');
+Route::get('/delete/{id}', [WorldController::class, 'deletecart'] )->name('delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

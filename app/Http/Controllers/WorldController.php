@@ -70,4 +70,20 @@ class WorldController extends Controller
         return redirect('login');
     }
    }
+   public function showcart()
+   {
+
+    $user = auth()->user();
+
+    $carts = cart::where('phone', '=',  $user->phone)->get();
+    $count = cart::where('phone', '=',  $user->phone)->count();
+    return view('showcart', compact('count', 'carts'));
+   }
+
+   public function deletecart($id)
+   {
+        $data = cart::find($id);
+        $data -> delete();
+       return redirect()->back()->with('message', 'Product deleted successfully');
+   }
 }
