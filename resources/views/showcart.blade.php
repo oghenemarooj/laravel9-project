@@ -69,7 +69,7 @@
                             <div class="sp-product-item mb-20">
                                 <div class="sp-product-thumb">
                                     <span class="batch">New</span>
-                                    <a href="shop-details.html"><img src="/storage/images/{{ $cart->image }}" alt=""></a>
+                                    <a href="#"><img src="/storage/images/{{ $cart->image }}" alt=""></a>
                                 </div>
                                 <div class="sp-product-content">
                                     <div class="rating">
@@ -79,7 +79,7 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </div>
-                                    <h6 class="title"><a href="shop-details.html">{{$cart->product_title}}</a></h6>
+                                    <h6 class="title"><a href="#">{{$cart->product_title}}</a></h6>
                                     <span class="product-status">{{$cart->quantity}}</span>
                                     <div class="sp-cart-wrap">
                                         <form action="#">
