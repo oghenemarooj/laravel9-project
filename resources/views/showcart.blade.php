@@ -59,6 +59,7 @@
                         </div>
                     </div>
                 </div>
+                <form action="{{url('order')}}" method=" POST">@csrf
                 <div class="best-sellers-products">
                     <div class="row justify-content-center">
 
@@ -69,6 +70,7 @@
                             <div class="sp-product-item mb-20">
                                 <div class="sp-product-thumb">
                                     <span class="batch">New</span>
+                                    <input type="text" name="image[]" value=" {{$cart->image}}" hidden>
                                     <a href="#"><img src="/storage/images/{{ $cart->image }}" alt=""></a>
                                 </div>
                                 <div class="sp-product-content">
@@ -79,16 +81,16 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </div>
-                                    <h6 class="title"><a href="#">{{$cart->product_title}}</a></h6>
-                                    <span class="product-status">{{$cart->quantity}}</span>
-                                    <div class="sp-cart-wrap">
-                                        <form action="#">
-                                            <div class="cart-plus-minus">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <p>{{$cart->price}}</p>
+                                    <h6 class="title"><a href="#">
+                                        <input type="text" name="productname[]" value=" {{$cart->product_title}}" hidden>
+                                        {{$cart->product_title}}</a></h6>
+                                    <span class="product-status">
+                                        <input type="text" name="quantity[]" value=" {{$cart->quantity}}" hidden>
+                                        {{$cart->quantity}}</span>
+
+                                    <p>
+                                        <input type="text" name="price[]" value=" {{$cart->price}}" hidden>
+                                        {{$cart->price}}</p>
                                     <div class="sp-cart-wrap">
                                         {{-- <form action="#">
                                             <div class="">
@@ -103,10 +105,13 @@
                         </div>
 
                         @endforeach
-                        <button class="btn btn-success">Confirm Order</button>
+
 
                     </div>
+
                 </div>
+                <button class="btn btn-success">Confirm Order</button>
+                </form>
             </div>
         </section>
         <!-- best-sellers-area-end -->

@@ -26,6 +26,7 @@ Route::get('/products-details/{product_id}', [WorldController::class, 'details']
 Route::post('/addcart/{id}', [WorldController::class, 'addcart'] )->name('addcart.products');
 Route::get('/showcart', [WorldController::class, 'showcart'] )->name('showcart.products');
 Route::get('/delete/{id}', [WorldController::class, 'deletecart'] )->name('delete');
+Route::get('/order', [WorldController::class, 'confirmorder'] )->name('order.products');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

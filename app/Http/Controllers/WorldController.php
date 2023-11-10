@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
-
 use App\Models\Cart;
+use App\Models\Order;
 
 class WorldController extends Controller
 {
@@ -86,5 +86,40 @@ class WorldController extends Controller
         $data = cart::find($id);
         $data -> delete();
        return redirect()->back()->with('message', 'Product deleted successfully');
+   }
+   public function confirmorder(Request $request)
+   {
+        $user = auth()->user();
+
+        $name = $user->name;
+
+        $phone = $user->phone;
+
+        $address = $user->address;
+
+        foreach ($request -> productname as $key =>$productname)
+        {
+            $order = new order;
+
+            $order -> product_name = $request->productname[$key];
+
+            $order -> price = $request->price[$key];
+
+            $order -> image = $request->image[$key];
+
+            $order -> quantity = $request->quantity[$key];
+
+            $order -> name= $name;
+
+            $order -> phone= $phone;
+
+            $order -> address= $address;
+
+            $order -> save();
+
+
+            return redirect()->back();
+        }
+
    }
 }
