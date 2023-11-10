@@ -58,6 +58,7 @@ class WorldController extends Controller
         $cart->address = $user->address;
 
         $cart->product_title = $product->name;
+        $cart->image = $product->image;
         $cart->price = $product->price;
         $cart->quantity = $request->quantity;
 

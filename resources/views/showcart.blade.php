@@ -69,7 +69,7 @@
                             <div class="sp-product-item mb-20">
                                 <div class="sp-product-thumb">
                                     <span class="batch">New</span>
-                                    <a href="shop-details.html"><img src="/storage/images/" alt=""></a>
+                                    <a href="shop-details.html"><img src="/storage/images/{{ $cart->image }}" alt=""></a>
                                 </div>
                                 <div class="sp-product-content">
                                     <div class="rating">
@@ -99,8 +99,11 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
                         @endforeach
+                        <button class="btn btn-success">Confirm Order</button>
 
                     </div>
                 </div>
