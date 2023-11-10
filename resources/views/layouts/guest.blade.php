@@ -1,13 +1,19 @@
 @php
     use App\Models\User;
     use App\Models\Cart;
-    $user = Auth::user();
-    $count = Cart::where('phone', $user->phone)->count();
+    use Illuminate\Support\Facades\Auth;
+    if (Auth::check()) {
+        $user = Auth::user();
+        $count = Cart::where('phone', $user->phone)->count();
+    }else {
+        $count = null;
+    }
+
 @endphp
 <!doctype html>
 <html class="no-js" lang="">
 
-<!-- Mirrored from themebeyond.com/pre/ganic-prev/ganic-live/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Feb 2022 22:22:39 GMT -->
+
 
 <head>
     <meta charset="utf-8">
