@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
 use App\Models\Cart;
@@ -115,11 +116,17 @@ class WorldController extends Controller
 
             $order -> address= $address;
 
+            $order -> status= "Not Delivered";
+
             $order -> save();
 
 
-            return redirect()->back();
+
         }
+
+        DB::table('cartS')->where('phone', $phone)->delete();
+
+        return redirect()->back()->with('message', 'Product Ordered successfully');
 
    }
 }

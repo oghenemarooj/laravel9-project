@@ -70,7 +70,7 @@
                             <div class="sp-product-item mb-20">
                                 <div class="sp-product-thumb">
                                     <span class="batch">New</span>
-                                    <input type="text" name="image[]" value=" {{$cart->image}}" hidden>
+                                    <input type="text" name="image[]" value=" {{$cart->image}}" hidden="">
                                     <a href="#"><img src="/storage/images/{{ $cart->image }}" alt=""></a>
                                 </div>
                                 <div class="sp-product-content">
@@ -82,14 +82,14 @@
                                         <i class="fas fa-star"></i>
                                     </div>
                                     <h6 class="title"><a href="#">
-                                        <input type="text" name="productname[]" value=" {{$cart->product_title}}" hidden>
+                                        <input type="text" name="productname[]" value=" {{$cart->product_title}}" hidden="">
                                         {{$cart->product_title}}</a></h6>
                                     <span class="product-status">
-                                        <input type="text" name="quantity[]" value=" {{$cart->quantity}}" hidden>
+                                        <input type="text" name="quantity[]" value=" {{$cart->quantity}}" hidden="">
                                         {{$cart->quantity}}</span>
 
                                     <p>
-                                        <input type="text" name="price[]" value=" {{$cart->price}}" hidden>
+                                        <input type="text" name="price[]" value=" {{$cart->price}}" hidden="">
                                         {{$cart->price}}</p>
                                     <div class="sp-cart-wrap">
                                         {{-- <form action="#">

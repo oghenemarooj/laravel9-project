@@ -4,6 +4,7 @@
     use Illuminate\Support\Facades\Auth;
     if (Auth::check()) {
         $user = Auth::user();
+        $carts = cart::where('phone', '=',  $user->phone)->get();
         $count = Cart::where('phone', $user->phone)->count();
     }else {
         $count = null;
@@ -196,61 +197,58 @@
 
                                     <li class="header-cart-action">
                                         <div class="header-cart-wrap">
-                                            <a href="{{url('showcart')}}"><i class="flaticon-shopping-basket"></i></a>
-                                            <span class="item-count">{{$count}}</span>
-                                            {{-- <span class="item-count">0</span> --}}
-                                            <ul class="minicart">
-                                                <li class="d-flex align-items-start">
-                                                    <div class="cart-img">
-                                                        <a href="shop-details.html"><img
-                                                                src="/eco_assets/img/product/cart_p01.jpg"
-                                                                alt=""></a>
-                                                    </div>
-                                                    <div class="cart-content">
-                                                        <h4><a href="shop-details.html">Organic Farm Fresh Nuts</a>
-                                                        </h4>
-                                                        <div class="cart-price">
-                                                            <span class="new">$229.9</span>
-                                                            <span><del>$229.9</del></span>
+
+
+                                            @if (Auth::check())
+                                                <a href="{{url('showcart')}}"><i class="flaticon-shopping-basket"></i></a>
+                                                <span class="item-count">{{$count}}</span>
+                                                <ul class="minicart">
+                                                    @foreach ($carts as $cart)
+
+
+                                                    <li class="d-flex align-items-start">
+                                                        <div class="cart-img">
+                                                            <a href="shop-details.html"><img
+                                                                    src="/storage/images/{{ $cart->image }}"
+                                                                    alt=""></a>
                                                         </div>
-                                                    </div>
-                                                    <div class="del-icon">
-                                                        <a href="#"><i class="far fa-trash-alt"></i></a>
-                                                    </div>
-                                                </li>
-                                                <li class="d-flex align-items-start">
-                                                    <div class="cart-img">
-                                                        <a href="shop-details.html"><img
-                                                                src="/eco_assets/img/product/cart_p02.jpg"
-                                                                alt=""></a>
-                                                    </div>
-                                                    <div class="cart-content">
-                                                        <h4><a href="shop-details.html">Organic Fresh Nuts Vanla
-                                                                Butter</a></h4>
-                                                        <div class="cart-price">
-                                                            <span class="new">$229.9</span>
-                                                            <span><del>$229.9</del></span>
+                                                        <div class="cart-content">
+                                                            <h4><a href="shop-details.html">{{$cart->product_title}}</a>
+                                                            </h4>
+                                                            <div class="cart-price">
+                                                                <span class="new">{{$cart->price}}</span>
+                                                                <span><del>$229.9</del></span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="del-icon">
-                                                        <a href="#"><i class="far fa-trash-alt"></i></a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="total-price">
-                                                        <span class="f-left">Total:</span>
-                                                        <span class="f-right">$239.9</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="checkout-link">
-                                                        <a href="cart.html">Shopping Cart</a>
-                                                        <a class="black-color" href="checkout.html">Checkout</a>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                                        <div class="del-icon">
+                                                            <a href="{{url('delete',$cart->id)}}"><i class="far fa-trash-alt"></i></a>
+                                                        </div>
+                                                    </li>
+
+                                                    @endforeach
+
+                                                    <li>
+                                                        <div class="total-price">
+                                                            <span class="f-left">Total:</span>
+                                                            <span class="f-right">$239.9</span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkout-link">
+                                                            <a href="cart.html">Shopping Cart</a>
+                                                            <a class="black-color" href="checkout.html">Checkout</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            @else
+                                                 {{-- <span class="item-count">0</span> --}}
+                                            @endif
+
+
+
+
                                         </div>
-                                        <div class="cart-amount">$0.00</div>
+
                                     </li>
                                 </ul>
                             </div>
