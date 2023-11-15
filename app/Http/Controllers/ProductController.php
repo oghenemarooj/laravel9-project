@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all(); //getting all from the database
-        return view('user.add_product', compact('categories'));
+        return view('admin.add_product', compact('categories'));
     }
 
     public function store(Request $request)
@@ -49,14 +49,14 @@ class ProductController extends Controller
     {
         $products = Product::latest()->get(); //getting all from the database
 
-        return view('user.product', compact('products'));
+        return view('admin.product', compact('products'));
     }
 
 
     public function edit(Product $product)
     {
         $categories = Category::all();
-        return view('user.edit_product', compact('product', 'categories'));
+        return view('admin.edit_product', compact('product', 'categories'));
     }
     public function update(Request $request, Product $product)
     {

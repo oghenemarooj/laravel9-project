@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', [WorldController::class, 'index'])->name('welcome');
 Route::get('/about-us', [WorldController::class, 'about'])->name('about.us');
 Route::get('/contact-us', [WorldController::class, 'contact'])->name('contact');
@@ -28,13 +30,23 @@ Route::get('/showcart', [WorldController::class, 'showcart'] )->name('showcart.p
 Route::get('/delete/{id}', [WorldController::class, 'deletecart'] )->name('delete');
 Route::get('/order', [WorldController::class, 'confirmorder'] )->name('order.products');
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    if(Auth::user()->role == 'admin'){
+        return redirect()->route('admin.dashboard');
+    }elseif(Auth::user()->role == 'user'){
+        return redirect()->route('welcome');
+    }else{
+        return redirect('404');
+    }
+
 })->middleware(['auth'])->name('dashboard');
 
-
-
-Route::middleware(['auth'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+    Route::get('/dashboard', [CategoryController::class, 'dashboard'] )->name('admin.dashboard');
     Route::get('/add-category', [CategoryController::class, 'create'] )->name('category.create');
     Route::post('/store-category', [CategoryController::class, 'store'] )->name('category.store');
     Route::get('/add-product', [ProductController::class, 'create'] )->name('product.create');
@@ -42,9 +54,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product', [ProductController::class, 'view'] )->name('product.view');
     Route::get('/all-category', [CategoryController::class, 'all'] )->name('category.all');
     Route::get('/product-category/{category_id}', [CategoryController::class, 'products'] )->name('category.products');
-
-
-
 
     Route::get('/edit-product/{product}', [ProductController::class, 'edit'] )->name('product.edit');
     Route::post('/update-product/{product}', [ProductController::class, 'update'] )->name('product.update');

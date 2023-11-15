@@ -8,11 +8,16 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
     public function create()
     {
 
 
-        return view('user.add_category');
+        return view('admin.add_category');
     }
     public function store(Request $request)
     {
@@ -34,13 +39,13 @@ class CategoryController extends Controller
 
 
 
-        return view('user.all_category', compact('categories',));
+        return view('admin.all_category', compact('categories',));
     }
     public function products($category_id)
     {
         $products = Product::where('category_id', $category_id)->get();
 
-        return view('user.product_category', compact('products'));
+        return view('admin.product_category', compact('products'));
     }
 
 
