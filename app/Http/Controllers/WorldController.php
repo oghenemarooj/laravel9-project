@@ -75,11 +75,13 @@ class WorldController extends Controller
    public function showcart()
    {
 
+    $totalPrice = 0;
+
     $user = auth()->user();
 
     $carts = cart::where('phone', '=',  $user->phone)->get();
     $count = cart::where('phone', '=',  $user->phone)->count();
-    return view('showcart', compact('count', 'carts'));
+    return view('showcart', compact('count', 'carts', 'totalPrice'));
    }
 
    public function deletecart($id)
