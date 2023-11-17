@@ -90,6 +90,12 @@ class WorldController extends Controller
         $data -> delete();
        return redirect()->back()->with('message', 'Product deleted successfully');
    }
+
+   public function checkout()
+   {
+    return view('checkout');
+   }
+
    public function confirmorder(Request $request)
    {
         $user = auth()->user();

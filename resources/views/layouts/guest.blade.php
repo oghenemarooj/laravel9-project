@@ -3,6 +3,7 @@
     use App\Models\Cart;
     use Illuminate\Support\Facades\Auth;
     if (Auth::check()) {
+        $totalPrice = 0;
         $user = Auth::user();
         $carts = cart::where('phone', '=',  $user->phone)->get();
         $count = Cart::where('phone', $user->phone)->count();
@@ -217,7 +218,10 @@
                                                             </h4>
                                                             <div class="cart-price">
                                                                 <span class="new">{{$cart->price}}</span>
-                                                                <span><del>$229.9</del></span>
+                                                                <span><del></del></span>
+                                                                @php
+                                                                    $totalPrice += $cart->price
+                                                                @endphp
                                                             </div>
                                                         </div>
                                                         <div class="del-icon">
@@ -230,7 +234,7 @@
                                                     <li>
                                                         <div class="total-price">
                                                             <span class="f-left">Total:</span>
-                                                            <span class="f-right">$239.9</span>
+                                                            <span class="f-right">${{$totalPrice}}</span>
                                                         </div>
                                                     </li>
                                                     <li>
