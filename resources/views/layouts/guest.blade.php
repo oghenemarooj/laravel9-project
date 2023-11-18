@@ -217,10 +217,10 @@
                                                             <h4><a href="shop-details.html">{{$cart->product_title}}</a>
                                                             </h4>
                                                             <div class="cart-price">
-                                                                <span class="new">{{$cart->price}}</span>
+                                                                <span class="new">${{number_format($cart->price*$cart->quantity,2)}}</span>
                                                                 <span><del></del></span>
                                                                 @php
-                                                                    $totalPrice += $cart->price
+                                                                    $totalPrice += $cart->price*$cart->quantity
                                                                 @endphp
                                                             </div>
                                                         </div>
@@ -234,12 +234,12 @@
                                                     <li>
                                                         <div class="total-price">
                                                             <span class="f-left">Total:</span>
-                                                            <span class="f-right">${{$totalPrice}}</span>
+                                                            <span class="f-right">${{number_format($totalPrice,2)}}</span>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="checkout-link">
-                                                            <a href="cart.html">Shopping Cart</a>
+                                                            <a href="{{route('showcart.products')}}">Show Cart</a>
                                                             <a class="black-color" href="checkout.html">Checkout</a>
                                                         </div>
                                                     </li>

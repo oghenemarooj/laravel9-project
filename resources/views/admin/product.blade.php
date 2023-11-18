@@ -33,7 +33,7 @@
                                         <a  class="fw-bold">{{ $product->name }} </a>
                                         <p  class="text-muted">{{ $product->description }}</p>
                                         <span  class="d-block fw-bold fs-5 text-secondary">{{ $product->price }}</span>
-                                        <a href="{{ route('product.edit', $product) }}" class="btn btn-primary mt-3">Edit Product</a>
+                                        <a href="{{ route('product.edit', $product) }}" onclick="return confirm('are you sure')" class="btn btn-primary mt-3">Edit Product</a>
                                     </div>
                                 </div>
                             </div>
