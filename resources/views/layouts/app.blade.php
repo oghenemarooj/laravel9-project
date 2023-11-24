@@ -35,6 +35,7 @@
                     <li><a class="m-link active" href="{{ route('product.create') }}"><i class="icofont-ui-calculator"></i> <span> Add Product</span></a></li>
                     <li><a class="m-link active" href="{{ route('product.view') }}"><i class="icofont-notepad fs-5"></i> <span>All Product</span></a></li>
                     <li><a class="m-link active" href="{{ route('category.all') }}"><i class="icofont-notepad fs-5"></i> <span>All category</span></a></li>
+                    <li><a class="m-link active" href="{{ route('admin.view') }}"><i class="icofont-notepad fs-5"></i> <span>Annouce</span></a></li>
                 </ul>
 
                 <!-- Menu: menu collepce btn -->
@@ -191,7 +192,7 @@
                                                     out</span></a>
                                             <form action="{{ route('logout') }} " id="logout-form" method="post">@csrf
                                             </form>
-                                       
+
                                         </div>
                                     </div>
                                 </div>

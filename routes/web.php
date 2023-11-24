@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\WorldController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WorldController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,10 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/edit-product/{product}', [ProductController::class, 'edit'] )->name('product.edit');
     Route::post('/update-product/{product}', [ProductController::class, 'update'] )->name('product.update');
+
+
+    Route::get('/annoucement', [AnnouncementController::class, 'view'] )->name('admin.view');
+    Route::post('/annoucement', [AnnouncementController::class, 'store'] )->name('admin.annouce');
 });
 
 require __DIR__.'/auth.php';
