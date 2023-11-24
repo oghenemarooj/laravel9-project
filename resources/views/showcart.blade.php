@@ -99,6 +99,8 @@
                                         </form> --}}
                                         <a class="btn btn-danger" href="{{url('delete',$cart->id)}}">Delete</a>
                                     </div>
+
+                                    <a class="btn btn-danger" href="{{url('checkout')}}">checkout</a>
                                 </div>
                             </div>
 

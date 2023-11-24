@@ -22,6 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('image')->nullable();
             $table->string('quantity')->nullable();
             $table->string('price')->nullable();
+            $table->enum('payment', ['Cod', 'Paypal', 'Paystack']);
             $table->string('status')->nullable();
             $table->timestamps();
         });

@@ -74,14 +74,21 @@ class WorldController extends Controller
    }
    public function showcart()
    {
+     if (Auth::check()) {
+        $totalPrice = 0;
+        $user = Auth::user();
+        $carts = cart::where('phone', '=',  $user->phone)->get();
+        $count = Cart::where('phone', $user->phone)->count();
+        return view('showcart', compact('count', 'carts'));
+    }else {
+        return view('auth.login');
+    }
 
-    $totalPrice = 0;
+    // $user = auth()->user();
 
-    $user = auth()->user();
-
-    $carts = cart::where('phone', '=',  $user->phone)->get();
-    $count = cart::where('phone', '=',  $user->phone)->count();
-    return view('showcart', compact('count', 'carts', 'totalPrice'));
+    // $carts = cart::where('phone', '=',  $user->phone)->get();
+    // $count = cart::where('phone', '=',  $user->phone)->count();
+    // return view('showcart', compact('count', 'carts'));
    }
 
    public function deletecart($id)
@@ -91,9 +98,15 @@ class WorldController extends Controller
        return redirect()->back()->with('message', 'Product deleted successfully');
    }
 
+
+
    public function checkout()
    {
-    return view('checkout');
+    $user = auth()->user();
+    $totalPriceAmount = 0;
+    $carts = cart::where('phone', '=',  $user->phone)->get();
+
+    return view('checkout', compact( 'carts', 'totalPriceAmount'));
    }
 
    public function confirmorder(Request $request)
@@ -132,7 +145,7 @@ class WorldController extends Controller
 
         }
 
-        DB::table('cartS')->where('phone', $phone)->delete();
+        DB::table('carts')->where('phone', $phone)->delete();
 
         return redirect()->back()->with('message', 'Product Ordered successfully');
 
