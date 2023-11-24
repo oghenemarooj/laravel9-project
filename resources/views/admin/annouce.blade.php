@@ -12,7 +12,7 @@
                         </div>
                         <div class="card-body">
                             <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                            <form action="" method="post" enctype="multipart/form-data">@csrf
+                            <form action="{{route('admin.annouce')}}" method="post" enctype="multipart/form-data">@csrf
                                 <div class="mb-3">
                                     <label  class="form-label">Title</label>
                                     <input name="title" type ="text" class="form-control">
