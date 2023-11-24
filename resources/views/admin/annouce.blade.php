@@ -15,11 +15,11 @@
                             <form action="" method="post" enctype="multipart/form-data">@csrf
                                 <div class="mb-3">
                                     <label  class="form-label">Title</label>
-                                    <input name="name" type ="text" class="form-control">
+                                    <input name="title" type ="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label  class="form-label">Description</label>
-                                    <input name="price" type ="text" class="form-control">
+                                    <input name="description" type ="text" class="form-control">
                                 </div>
 
 
