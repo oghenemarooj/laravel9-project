@@ -17,15 +17,41 @@ class AnnouncementController extends Controller
             'description' => $request->description,
         ]);
 
-        //sending user
+        //[sending user]
         // $user = User::first();
         // $user->notify(new AnnouncementCreated($announcement));
 
 
-        //sending to email
-        Notification::route('mail', ['someone@example.com' => 'John Doe'])->notify(new AnnouncementCreated($announcement));
+        //[sending to email]
+        // Notification::route('mail', ['someone@example.com' => 'John Doe'])->notify(new AnnouncementCreated($announcement));
 
-        //sending to multiple users
+
+
+
+        //[sending to multiple selected users]
+        // $receipients = [
+        //     'someone@example.com' => 'John Doe',
+        //     'someone1@example.com' => 'John Wick',
+        //     'someone2@example.com' => 'kon junk',
+        // ];
+
+        // Notification::route('mail', $receipients)->notify(new AnnouncementCreated($announcement));
+
+
+
+        //[sending to all users on database]
+        // $users = User::all();
+
+        // Notification::route('mail', $users)->notify(new AnnouncementCreated($announcement));
+
+
+        //[sending emails to the first 10 users at a time]
+        User::chunk(10, function($users) use ($announcement)
+        {
+            $receipients = $users->pluck('email');
+            Notification::route('mail', $users)->notify(new AnnouncementCreated($announcement));
+        });
+
 
         return back()->with(['success' => 'Announcement created']);
     }
