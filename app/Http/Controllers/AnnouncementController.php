@@ -48,7 +48,7 @@ class AnnouncementController extends Controller
         //[sending emails to the first 10 users at a time]
         User::chunk(10, function($users) use ($announcement)
         {
-            $receipients = $users->pluck('email');
+            $receipients = $users->pluck('name', 'email');
             Notification::route('mail', $users)->notify(new AnnouncementCreated($announcement));
         });
 
