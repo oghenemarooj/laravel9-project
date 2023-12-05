@@ -2,8 +2,10 @@
 
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WorldController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AnnouncementController;
@@ -32,6 +34,15 @@ Route::get('/delete/{id}', [WorldController::class, 'deletecart'] )->name('delet
 
 Route::get('/checkout', [WorldController::class, 'checkout'] )->name('checkout.products');
 Route::get('/order', [WorldController::class, 'confirmorder'] )->name('order.products');
+
+Route::get('/index', [AppController::class, 'index'] )->name('order.products');
+
+
+Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
+
+Route::get('/payment/callback', 'App\Http\Controllers\PaymentController@handleGatewayCallback');
+
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
