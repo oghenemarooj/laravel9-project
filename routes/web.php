@@ -36,11 +36,14 @@ Route::get('/checkout', [WorldController::class, 'checkout'] )->name('checkout.p
 Route::get('/order', [WorldController::class, 'confirmorder'] )->name('order.products');
 
 Route::get('/index', [AppController::class, 'index'] )->name('order.products');
+Route::post('/pay', [AppController::class, 'make_payment'] )->name('pay');
+Route::get('/pay/callback', [AppController::class, 'pay_callback'] )->name('callback');
 
 
-Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
+// Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
 
-Route::get('/payment/callback', 'App\Http\Controllers\PaymentController@handleGatewayCallback');
+// Laravel 8 & 9
+// Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
 
 
 
